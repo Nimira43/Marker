@@ -40,7 +40,7 @@ function buildBookmarks() {
         const closeIcon = document.createElement('i')
         closeIcon.classList.add('fas', 'fa-times')
         closeIcon.setAttribute('title', 'Delete Bookmark')
-        closeIcon.setAttribute('onclick', `deleteBookmark('${url})`)
+        closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`)
         const linkInfo = document.createElement('div')
         linkInfo.classList.add('name')
         const favicon = document.createElement('img')
@@ -66,7 +66,7 @@ function fetchBookmarks() {
                 url: 'https://github.com/Nimira43',
             },
         ]
-        localStorage.setITem('bookmarks', JSON.stringify(bookmarks))
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
     }
     buildBookmarks()
 }
@@ -77,7 +77,7 @@ function deleteBookmark(url) {
             bookmarks.splice(i, 1)
         }
     })
-    localStorage.setITem('bookmarks', JSON.stringify(bookmarks))
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
     fetchBookmarks()
 }
 
